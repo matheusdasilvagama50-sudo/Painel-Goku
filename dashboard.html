@@ -4,11 +4,14 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Painel Goku</title>
+<title>Dashboard Goku</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
@@ -25,35 +28,16 @@ color:#fff;
 overflow:hidden;
 }
 
-/* FUNDO */
-
-.bg{
-position:fixed;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at top,#7b00ff55,transparent 40%),
-radial-gradient(circle at bottom,#a200ff44,transparent 40%),
-#000;
-z-index:-1;
-}
-
-/* SIDEBAR */
-
 .sidebar{
 position:fixed;
 left:0;
 top:0;
-width:260px;
+width:250px;
 height:100%;
-background:#0d0d0d;
-border-right:2px solid #a200ff;
+background:#111;
 padding:20px;
-box-shadow:0 0 25px #a200ff55;
-overflow:auto;
+border-right:2px solid #a200ff;
 }
-
-/* PERFIL */
 
 .profile{
 text-align:center;
@@ -65,176 +49,73 @@ width:120px;
 height:120px;
 border-radius:50%;
 border:4px solid #a200ff;
-box-shadow:0 0 30px #a200ff;
-object-fit:cover;
+box-shadow:0 0 20px #a200ff;
 }
 
 .profile h1{
 margin-top:15px;
-font-size:28px;
-}
-
-.profile p{
-color:#c800ff;
-font-size:14px;
-}
-
-/* MENU */
-
-.menu{
-margin-top:25px;
 }
 
 .menu button{
 width:100%;
 padding:15px;
 margin-bottom:15px;
-background:#161616;
 border:none;
 border-radius:14px;
+background:#1a1a1a;
 color:#fff;
-font-size:15px;
-font-weight:600;
 cursor:pointer;
-transition:0.3s;
-box-shadow:0 0 10px #000;
+font-weight:600;
 }
 
-.menu button:hover{
-background:#a200ff;
-transform:translateX(5px);
-box-shadow:0 0 20px #a200ff;
-}
-
-/* MAIN */
-
-.main{
-margin-left:280px;
-padding:30px;
-height:100vh;
-overflow:auto;
-}
-
-/* TOPO */
-
-.top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:30px;
-}
-
-.top h2{
-font-size:34px;
-}
-
-.status{
-padding:10px 20px;
-border-radius:12px;
-background:#111;
-border:2px solid #00ff99;
-color:#00ff99;
-font-weight:700;
-box-shadow:0 0 15px #00ff99;
-}
-
-/* CARDS */
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card{
-background:#111;
-padding:25px;
-border-radius:20px;
-border:1px solid #a200ff55;
-box-shadow:0 0 20px #a200ff22;
-transition:0.3s;
-position:relative;
-overflow:hidden;
-}
-
-.card::before{
-content:'';
-position:absolute;
-width:150px;
-height:150px;
-background:#a200ff33;
-border-radius:50%;
-top:-50px;
-right:-50px;
-}
-
-.card:hover{
-transform:translateY(-5px);
-box-shadow:0 0 30px #a200ff88;
-}
-
-.card h3{
-font-size:22px;
-margin-bottom:10px;
+.menu button i{
+margin-right:10px;
 color:#d000ff;
 }
 
-.card p{
-font-size:14px;
-line-height:24px;
-color:#bbb;
-}
-
-/* BARRA */
-
-.bar{
-margin-top:15px;
-width:100%;
-height:12px;
-background:#1a1a1a;
-border-radius:20px;
-overflow:hidden;
-}
-
-.bar div{
-height:100%;
-background:linear-gradient(90deg,#7b00ff,#d000ff);
-width:90%;
-box-shadow:0 0 20px #a200ff;
-}
-
-/* FOOTER */
-
-.footer{
-margin-top:30px;
-text-align:center;
-color:#777;
-font-size:13px;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-.sidebar{
-width:100%;
-height:auto;
-position:relative;
-border-right:none;
-border-bottom:2px solid #a200ff;
-}
-
 .main{
-margin-left:0;
-padding:20px;
+margin-left:270px;
+padding:30px;
 }
 
-.top{
-flex-direction:column;
-gap:15px;
-align-items:flex-start;
+.inject-box{
+background:#111;
+padding:25px;
+border-radius:20px;
+border:2px solid #a200ff;
 }
 
+.terminal{
+width:100%;
+height:250px;
+background:#000;
+border-radius:12px;
+padding:15px;
+overflow:auto;
+font-family:monospace;
+color:#00ff99;
+margin-bottom:20px;
+border:1px solid #00ff99;
+}
+
+.inject-btn,
+.open-btn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+margin-top:10px;
+font-weight:700;
+color:#fff;
+cursor:pointer;
+}
+
+.inject-btn{
+background:linear-gradient(90deg,#7b00ff,#d000ff);
+}
+
+.open-btn{
+background:linear-gradient(90deg,#ff6600,#ff9900);
 }
 
 </style>
@@ -242,10 +123,6 @@ align-items:flex-start;
 </head>
 
 <body>
-
-<div class="bg"></div>
-
-<!-- SIDEBAR -->
 
 <div class="sidebar">
 
@@ -255,109 +132,93 @@ align-items:flex-start;
 
 <h1>Painel Goku</h1>
 
-<p>Magnata Developer</p>
-
 </div>
 
 <div class="menu">
 
-<button>🏠 Início</button>
+<button><i class="fa-solid fa-house"></i>Início</button>
 
-<button>⚡ Status</button>
+<button><i class="fa-solid fa-bolt"></i>Status</button>
 
-<button>🛠 Configurações</button>
+<button><i class="fa-solid fa-dragon"></i>Anime</button>
 
-<button>🎮 Painel Anime</button>
-
-<button>🔥 Premium</button>
-
-<button>📞 Suporte</button>
+<button><i class="fa-solid fa-gear"></i>Config</button>
 
 </div>
 
 </div>
-
-<!-- MAIN -->
 
 <div class="main">
 
-<div class="top">
+<div class="inject-box">
 
-<h2>Dashboard Anime</h2>
+<h2>PAINEL GOKU</h2>
 
-<div class="status">
-ONLINE
-</div>
+<div class="terminal" id="terminal">
 
-</div>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>Visual Neon</h3>
-
-<p>
-Painel futurista estilo anime com tema roxo neon inspirado em Dragon Ball.
-</p>
-
-<div class="bar">
-<div></div>
-</div>
+<span>> Sistema iniciado...</span>
 
 </div>
 
-<div class="card">
+<button class="inject-btn" onclick="injetar()">
+INJETAR
+</button>
 
-<h3>Performance</h3>
-
-<p>
-Sistema rápido, leve e responsivo para Android, PC e Tablet.
-</p>
-
-<div class="bar">
-<div style="width:95%"></div>
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>Modo Anime</h3>
-
-<p>
-HUD avançada com design futurista e efeitos glow em tempo real.
-</p>
-
-<div class="bar">
-<div style="width:85%"></div>
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>Instalado</h3>
-
-<p>
-Aplicativo configurado como PWA com suporte offline e tela inicial.
-</p>
-
-<div class="bar">
-<div style="width:100%"></div>
-</div>
+<button class="open-btn" onclick="abrirFF()">
+ABRIR FREE FIRE
+</button>
 
 </div>
 
 </div>
 
-<div class="footer">
+<script>
 
-Painel Goku © 2026 — Criado por Magnata
+function injetar(){
 
-</div>
+const terminal = document.getElementById("terminal");
 
-</div>
+const linhas = [
+
+"> Inicializando...",
+"> Carregando assets...",
+"> Renderizando HUD...",
+"> Sistema online.",
+"> Painel iniciado."
+
+];
+
+terminal.innerHTML = "";
+
+let i = 0;
+
+const intervalo = setInterval(()=>{
+
+if(i >= linhas.length){
+
+clearInterval(intervalo);
+
+return;
+
+}
+
+terminal.innerHTML += `<div>${linhas[i]}</div>`;
+
+terminal.scrollTop = terminal.scrollHeight;
+
+i++;
+
+},700);
+
+}
+
+function abrirFF(){
+
+window.open("https://ff.garena.com","_blank");
+
+}
+
+</script>
 
 </body>
 </html>

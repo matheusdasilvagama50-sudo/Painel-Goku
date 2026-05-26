@@ -1,0 +1,240 @@
+<!-- dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard Goku</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#000;
+color:#fff;
+overflow:hidden;
+}
+
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:240px;
+height:100%;
+background:#0f0f0f;
+border-right:2px solid #a200ff;
+padding:20px;
+box-shadow:0 0 25px #a200ff55;
+}
+
+.logo{
+text-align:center;
+margin-bottom:30px;
+}
+
+.logo img{
+width:100px;
+height:100px;
+border-radius:50%;
+border:3px solid #a200ff;
+box-shadow:0 0 20px #a200ff;
+}
+
+.logo h1{
+font-size:24px;
+margin-top:10px;
+}
+
+.menu{
+margin-top:30px;
+}
+
+.menu button{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+background:#1a1a1a;
+border:none;
+border-radius:12px;
+color:#fff;
+font-size:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.menu button:hover{
+background:#a200ff;
+box-shadow:0 0 20px #a200ff;
+transform:translateX(5px);
+}
+
+.main{
+margin-left:260px;
+padding:30px;
+}
+
+.top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+}
+
+.top h2{
+font-size:30px;
+}
+
+.status{
+background:#111;
+padding:10px 20px;
+border-radius:12px;
+border:1px solid #a200ff;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:#111;
+padding:25px;
+border-radius:18px;
+border:1px solid #a200ff55;
+box-shadow:0 0 20px #a200ff22;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 30px #a200ff66;
+}
+
+.card h3{
+margin-bottom:10px;
+font-size:20px;
+color:#c800ff;
+}
+
+.card p{
+font-size:14px;
+line-height:24px;
+color:#bbb;
+}
+
+.footer{
+position:fixed;
+bottom:10px;
+right:20px;
+font-size:12px;
+color:#777;
+}
+
+@media(max-width:800px){
+
+.sidebar{
+width:100%;
+height:auto;
+position:relative;
+border-right:none;
+border-bottom:2px solid #a200ff;
+}
+
+.main{
+margin-left:0;
+padding:20px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+
+<img src="https://raw.githubusercontent.com/matheusdasilvagama50-sudo/Teste-Garena/main/file_0000000065ec720eb50430b0cefab549.png">
+
+<h1>Painel Goku</h1>
+
+</div>
+
+<div class="menu">
+
+<button>INÍCIO</button>
+<button>STATUS</button>
+<button>CONFIG</button>
+<button>SUPORTE</button>
+
+</div>
+
+</div>
+
+<div class="main">
+
+<div class="top">
+
+<h2>Dashboard</h2>
+
+<div class="status">
+ONLINE
+</div>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Painel Neon</h3>
+<p>
+Tema anime roxo com efeitos glow e design responsivo.
+</p>
+</div>
+
+<div class="card">
+<h3>Responsivo</h3>
+<p>
+Compatível com Android, PC e Tablet.
+</p>
+</div>
+
+<div class="card">
+<h3>Visual Anime</h3>
+<p>
+Inspirado em Dragon Ball com tema futurista.
+</p>
+</div>
+
+<div class="card">
+<h3>Magnata</h3>
+<p>
+Criador oficial do Painel Goku.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+Painel Goku © 2026
+</div>
+
+</body>
+</html>

@@ -4,71 +4,40 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="theme-color" content="#a200ff">
-
-<meta name="mobile-web-app-capable" content="yes">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-<meta name="apple-mobile-web-app-title" content="Painel Goku">
 
 <title>Painel Goku</title>
 
-<!-- MANIFEST -->
-
 <link rel="manifest" href="./manifest.json">
 
-<!-- FONTS -->
+<link rel="stylesheet" href="./style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<link rel="stylesheet" href="./style.css">
-
-<!-- ÍCONE -->
-
-<link rel="icon" href="https://raw.githubusercontent.com/matheusdasilvagama50-sudo/Teste-Garena/main/file_0000000065ec720eb50430b0cefab549.png">
+<meta name="theme-color" content="#a200ff">
 
 </head>
 
 <body>
 
-<!-- FUNDO -->
-
 <div class="bg"></div>
-
-<!-- LOGIN -->
 
 <div class="login-box">
 
-<!-- FOTO -->
-
-<img 
-class="avatar"
-src="https://raw.githubusercontent.com/matheusdasilvagama50-sudo/Teste-Garena/main/file_0000000065ec720eb50430b0cefab549.png"
->
-
-<!-- TÍTULO -->
+<img class="avatar"
+src="https://raw.githubusercontent.com/matheusdasilvagama50-sudo/Teste-Garena/main/file_0000000065ec720eb50430b0cefab549.png">
 
 <div class="title">
 Painel Goku
 </div>
 
-<!-- SUB -->
-
 <div class="sub">
-Criador do Painel: Magnata
+Criador: Magnata
 </div>
-
-<!-- INPUT -->
 
 <div class="input-box">
 <input type="text" placeholder="Usuário">
@@ -78,49 +47,20 @@ Criador do Painel: Magnata
 <input type="password" placeholder="Senha">
 </div>
 
-<!-- BOTÃO -->
-
 <button class="btn" onclick="abrirPopup()">
 ENTRAR
 </button>
 
-<!-- INFO -->
-
-<div class="info">
-
-Modelo:
-<span>Painel Goku</span>
-
-<br>
-
-Tema Neon Anime Roxo
-
 </div>
-
-</div>
-
-<!-- POPUP -->
 
 <div class="popup" id="popup">
 
-<h2>
-Permissões Necessárias
-</h2>
+<h2>Permissões</h2>
 
 <p>
-
-• Sobreposição do Painel
-<br>
-
-• Armazenamento
-<br>
-
+• Sobreposição<br>
+• Armazenamento<br>
 • Notificações
-
-<br><br>
-
-Ative todas as permissões para continuar.
-
 </p>
 
 <button onclick="fecharPopup()">
@@ -129,51 +69,27 @@ CONTINUAR
 
 </div>
 
-<!-- INSTALAR APP -->
-
 <div class="install-box" id="installBox" style="display:none;">
 
-<h3>
-Instalar Painel Goku
-</h3>
+<h3>Instalar App</h3>
 
 <p>
-Adicione o Painel Goku na tela inicial para usar como aplicativo.
+Adicionar Painel Goku na tela inicial.
 </p>
 
 <button id="installBtn">
-ADICIONAR À TELA INICIAL
+INSTALAR
 </button>
 
 </div>
 
-<!-- SCRIPT PRINCIPAL -->
-
 <script src="./script.js"></script>
-
-<!-- SERVICE WORKER -->
 
 <script>
 
 if("serviceWorker" in navigator){
 
-window.addEventListener("load",()=>{
-
-navigator.serviceWorker.register("./service-worker.js")
-
-.then((registration)=>{
-
-console.log("Service Worker registrado");
-
-})
-
-.catch((error)=>{
-
-console.log("Erro Service Worker:",error);
-
-});
-
-});
+navigator.serviceWorker.register("./service-worker.js");
 
 }
 

@@ -1,13 +1,12 @@
-<!-- dashboard.html -->
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dashboard Goku</title>
+<title>Painel Goku</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -26,63 +25,97 @@ color:#fff;
 overflow:hidden;
 }
 
+/* FUNDO */
+
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top,#7b00ff55,transparent 40%),
+radial-gradient(circle at bottom,#a200ff44,transparent 40%),
+#000;
+z-index:-1;
+}
+
+/* SIDEBAR */
+
 .sidebar{
 position:fixed;
 left:0;
 top:0;
-width:240px;
+width:260px;
 height:100%;
-background:#0f0f0f;
+background:#0d0d0d;
 border-right:2px solid #a200ff;
 padding:20px;
 box-shadow:0 0 25px #a200ff55;
+overflow:auto;
 }
 
-.logo{
+/* PERFIL */
+
+.profile{
 text-align:center;
 margin-bottom:30px;
 }
 
-.logo img{
-width:100px;
-height:100px;
+.profile img{
+width:120px;
+height:120px;
 border-radius:50%;
-border:3px solid #a200ff;
-box-shadow:0 0 20px #a200ff;
+border:4px solid #a200ff;
+box-shadow:0 0 30px #a200ff;
+object-fit:cover;
 }
 
-.logo h1{
-font-size:24px;
-margin-top:10px;
+.profile h1{
+margin-top:15px;
+font-size:28px;
 }
+
+.profile p{
+color:#c800ff;
+font-size:14px;
+}
+
+/* MENU */
 
 .menu{
-margin-top:30px;
+margin-top:25px;
 }
 
 .menu button{
 width:100%;
-padding:14px;
+padding:15px;
 margin-bottom:15px;
-background:#1a1a1a;
+background:#161616;
 border:none;
-border-radius:12px;
+border-radius:14px;
 color:#fff;
 font-size:15px;
+font-weight:600;
 cursor:pointer;
 transition:0.3s;
+box-shadow:0 0 10px #000;
 }
 
 .menu button:hover{
 background:#a200ff;
-box-shadow:0 0 20px #a200ff;
 transform:translateX(5px);
+box-shadow:0 0 20px #a200ff;
 }
 
+/* MAIN */
+
 .main{
-margin-left:260px;
+margin-left:280px;
 padding:30px;
+height:100vh;
+overflow:auto;
 }
+
+/* TOPO */
 
 .top{
 display:flex;
@@ -92,40 +125,58 @@ margin-bottom:30px;
 }
 
 .top h2{
-font-size:30px;
+font-size:34px;
 }
 
 .status{
-background:#111;
 padding:10px 20px;
 border-radius:12px;
-border:1px solid #a200ff;
+background:#111;
+border:2px solid #00ff99;
+color:#00ff99;
+font-weight:700;
+box-shadow:0 0 15px #00ff99;
 }
+
+/* CARDS */
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
 .card{
 background:#111;
 padding:25px;
-border-radius:18px;
+border-radius:20px;
 border:1px solid #a200ff55;
 box-shadow:0 0 20px #a200ff22;
 transition:0.3s;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:'';
+position:absolute;
+width:150px;
+height:150px;
+background:#a200ff33;
+border-radius:50%;
+top:-50px;
+right:-50px;
 }
 
 .card:hover{
 transform:translateY(-5px);
-box-shadow:0 0 30px #a200ff66;
+box-shadow:0 0 30px #a200ff88;
 }
 
 .card h3{
+font-size:22px;
 margin-bottom:10px;
-font-size:20px;
-color:#c800ff;
+color:#d000ff;
 }
 
 .card p{
@@ -134,15 +185,36 @@ line-height:24px;
 color:#bbb;
 }
 
-.footer{
-position:fixed;
-bottom:10px;
-right:20px;
-font-size:12px;
-color:#777;
+/* BARRA */
+
+.bar{
+margin-top:15px;
+width:100%;
+height:12px;
+background:#1a1a1a;
+border-radius:20px;
+overflow:hidden;
 }
 
-@media(max-width:800px){
+.bar div{
+height:100%;
+background:linear-gradient(90deg,#7b00ff,#d000ff);
+width:90%;
+box-shadow:0 0 20px #a200ff;
+}
+
+/* FOOTER */
+
+.footer{
+margin-top:30px;
+text-align:center;
+color:#777;
+font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
 
 .sidebar{
 width:100%;
@@ -157,6 +229,12 @@ margin-left:0;
 padding:20px;
 }
 
+.top{
+flex-direction:column;
+gap:15px;
+align-items:flex-start;
+}
+
 }
 
 </style>
@@ -165,32 +243,47 @@ padding:20px;
 
 <body>
 
+<div class="bg"></div>
+
+<!-- SIDEBAR -->
+
 <div class="sidebar">
 
-<div class="logo">
+<div class="profile">
 
 <img src="https://raw.githubusercontent.com/matheusdasilvagama50-sudo/Teste-Garena/main/file_0000000065ec720eb50430b0cefab549.png">
 
 <h1>Painel Goku</h1>
 
+<p>Magnata Developer</p>
+
 </div>
 
 <div class="menu">
 
-<button>INÍCIO</button>
-<button>STATUS</button>
-<button>CONFIG</button>
-<button>SUPORTE</button>
+<button>🏠 Início</button>
+
+<button>⚡ Status</button>
+
+<button>🛠 Configurações</button>
+
+<button>🎮 Painel Anime</button>
+
+<button>🔥 Premium</button>
+
+<button>📞 Suporte</button>
 
 </div>
 
 </div>
+
+<!-- MAIN -->
 
 <div class="main">
 
 <div class="top">
 
-<h2>Dashboard</h2>
+<h2>Dashboard Anime</h2>
 
 <div class="status">
 ONLINE
@@ -201,31 +294,57 @@ ONLINE
 <div class="cards">
 
 <div class="card">
-<h3>Painel Neon</h3>
+
+<h3>Visual Neon</h3>
+
 <p>
-Tema anime roxo com efeitos glow e design responsivo.
+Painel futurista estilo anime com tema roxo neon inspirado em Dragon Ball.
 </p>
+
+<div class="bar">
+<div></div>
+</div>
+
 </div>
 
 <div class="card">
-<h3>Responsivo</h3>
+
+<h3>Performance</h3>
+
 <p>
-Compatível com Android, PC e Tablet.
+Sistema rápido, leve e responsivo para Android, PC e Tablet.
 </p>
+
+<div class="bar">
+<div style="width:95%"></div>
+</div>
+
 </div>
 
 <div class="card">
-<h3>Visual Anime</h3>
+
+<h3>Modo Anime</h3>
+
 <p>
-Inspirado em Dragon Ball com tema futurista.
+HUD avançada com design futurista e efeitos glow em tempo real.
 </p>
+
+<div class="bar">
+<div style="width:85%"></div>
+</div>
+
 </div>
 
 <div class="card">
-<h3>Magnata</h3>
+
+<h3>Instalado</h3>
+
 <p>
-Criador oficial do Painel Goku.
+Aplicativo configurado como PWA com suporte offline e tela inicial.
 </p>
+
+<div class="bar">
+<div style="width:100%"></div>
 </div>
 
 </div>
@@ -233,7 +352,11 @@ Criador oficial do Painel Goku.
 </div>
 
 <div class="footer">
-Painel Goku © 2026
+
+Painel Goku © 2026 — Criado por Magnata
+
+</div>
+
 </div>
 
 </body>

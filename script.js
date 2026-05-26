@@ -1,4 +1,40 @@
 /* =========================================
+   LOGIN
+========================================= */
+
+function abrirPopup(){
+
+let user = document.querySelector('input[type="text"]').value;
+
+let pass = document.querySelector('input[type="password"]').value;
+
+/* LOGIN */
+
+if(user === "magnata" && pass === "goku2026"){
+
+document.getElementById("popup").style.display = "block";
+
+}else{
+
+alert("Usuário ou senha incorretos");
+
+}
+
+}
+
+/* =========================================
+   FECHAR POPUP
+========================================= */
+
+function fecharPopup(){
+
+document.getElementById("popup").style.display = "none";
+
+criarBolinha();
+
+}
+
+/* =========================================
    BOTÃO FLUTUANTE GOKU
 ========================================= */
 
@@ -20,7 +56,7 @@ bolinha.innerHTML = `
 
 document.body.appendChild(bolinha);
 
-/* POSIÇÃO SALVA */
+/* POSIÇÃO */
 
 let posX = localStorage.getItem("floatX");
 let posY = localStorage.getItem("floatY");
@@ -52,7 +88,6 @@ bolinha.style.justifyContent = "center";
 bolinha.style.zIndex = "999999";
 bolinha.style.cursor = "move";
 bolinha.style.overflow = "visible";
-bolinha.style.backdropFilter = "blur(5px)";
 
 /* IMAGEM */
 
@@ -63,7 +98,7 @@ img.style.height = "100%";
 img.style.borderRadius = "50%";
 img.style.objectFit = "cover";
 
-/* BOTÃO X */
+/* X */
 
 const fechar = document.getElementById("fechar-float");
 
@@ -81,7 +116,6 @@ fechar.style.color = "#fff";
 fechar.style.fontSize = "14px";
 fechar.style.fontWeight = "bold";
 fechar.style.cursor = "pointer";
-fechar.style.boxShadow = "0 0 10px #ff0033";
 
 /* FECHAR */
 
@@ -95,7 +129,7 @@ localStorage.removeItem("floatVisible");
 
 };
 
-/* ABRIR PAINEL */
+/* ABRIR DASHBOARD */
 
 bolinha.onclick = () => {
 
@@ -103,7 +137,7 @@ window.location.href = "dashboard.html";
 
 };
 
-/* DEIXAR FIXO ENTRE PÁGINAS */
+/* SALVAR */
 
 localStorage.setItem("floatVisible","true");
 
@@ -172,19 +206,7 @@ mouseDrag = false;
 }
 
 /* =========================================
-   CONTINUAR APÓS PERMISSÃO
-========================================= */
-
-function fecharPopup(){
-
-document.getElementById("popup").style.display = "none";
-
-criarBolinha();
-
-}
-
-/* =========================================
-   MANTER A BOLINHA EM TODAS AS PÁGINAS
+   CONTINUAR BOLINHA
 ========================================= */
 
 window.onload = () => {
